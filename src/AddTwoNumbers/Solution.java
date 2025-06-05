@@ -15,7 +15,7 @@ class Solution {
         ListNode head = new ListNode(0);
         ListNode l3 = head;
         int carry = 0;
-        while (l1 != 0 || l2 != 0) {
+        while (l1 != null || l2 != null) {
             int l1Value = (l1 != null) ? l1.val : 0;
             int l2Value = (l2 != null) ? l2.val : 0;
 
@@ -33,11 +33,11 @@ class Solution {
             l3 = l3.next;
         }
         if (carry > 0) {
-            ListNode newNode = new ListNode(number);
+            ListNode newNode = new ListNode(carry);
             l3.next = newNode;
             l3 = l3.next;
         }
 
-        return l3.next;
+        return head.next;
     }
 }
